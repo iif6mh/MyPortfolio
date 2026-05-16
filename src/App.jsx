@@ -7,14 +7,14 @@ function App() {
   const projectsData = [
     {
       id: 1,
-      year: '2024',
+      year: '2026',
       title: 'SafeLeaf',
       category: 'Graduation Project',
       image: '/project 1.png',
     },
     {
       id: 2,
-      year: '2024',
+      year: '2026',
       title: 'HotelBuddy',
       category: 'UX Case Study',
       image: '/project2.png',
