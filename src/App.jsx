@@ -142,10 +142,10 @@ function App() {
             { name: 'C++', icon: 'devicon-cplusplus-plain' },
             { name: 'Java', icon: 'devicon-java-plain' },
             { name: 'Python', icon: 'devicon-python-plain' },
-            { name: 'AI & Machine Learning', icon: 'devicon-tensorflow-original' },
             { name: 'Github', icon: 'devicon-github-original' },
             { name: 'Flutter', icon: 'devicon-flutter-plain' },
             { name: 'SQL', icon: 'devicon-mysql-plain' },
+            { name: 'AI & Machine Learning', icon: 'devicon-tensorflow-original' },
             { name: 'Firebase', icon: 'devicon-firebase-plain' }
           ].map((skill, index) => (
             <div key={index} className="skill-tag">
