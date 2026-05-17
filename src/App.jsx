@@ -112,7 +112,7 @@ function App() {
           <img src="/avatar.png" alt="Fatimah Almaki" className="avatar" style={{ backgroundColor: 'transparent', borderRadius: '50%' }} />
         </div>
         
-        <h2 className="name">Hi, I'm Fatimah Almaki</h2>
+        <h2 className="name">Fatimah Almaki</h2>
         
         <div className="about-pills">
           <div className="role-pill">Computer Science and Information Technology 🎓</div>
