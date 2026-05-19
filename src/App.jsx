@@ -42,24 +42,37 @@ function App() {
     }
   ];
 
+
   const handleProjectClick = (id) => {
     if (id === 1) {
       setActivePage('safeleaf');
+      window.location.hash = 'safeleaf';
       window.scrollTo(0, 0);
     } else if (id === 2) {
       setActivePage('hotelbuddy');
+      window.location.hash = 'hotelbuddy';
       window.scrollTo(0, 0);
     } else if (id === 3) {
       setActivePage('gcwebsite');
+      window.location.hash = 'gcwebsite';
       window.scrollTo(0, 0);
     } else if (id === 4) {
       setActivePage('freshfork');
+      window.location.hash = 'freshfork';
       window.scrollTo(0, 0);
     } else if (id === 5) {
       setActivePage('lahj');
+      window.location.hash = 'lahj';
       window.scrollTo(0, 0);
     }
   };
+
+  React.useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && ['safeleaf', 'hotelbuddy', 'gcwebsite', 'freshfork', 'lahj'].includes(hash)) {
+      setActivePage(hash);
+    }
+  }, []);
 
   const renderHome = () => (
     <>
