@@ -197,8 +197,8 @@ function App() {
               <h4 className="timeline-subtitle" style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '4px' }}>GULF CONSULT Architects & Engineers | Al Khobar, SA</h4>
               <p className="timeline-date">June 2025 - August 2025</p>
               <ul className="timeline-desc" style={{ paddingLeft: '20px', margin: 0, marginTop: '12px' }}>
-                <li style={{ marginBottom: '8px' }}>Redesigned the company's website interfaces, covering 9+ pages, improving visual hierarchy, layout consistency, and overall user experience.</li>
-                <li>Gained hands-on experience integrating Firebase into real projects during the training period.</li>
+                <li style={{ marginBottom: '8px' }}>Redesigned 9 pages of the company's website interfaces using Figma, resulting in enhanced visual hierarchy, layout consistency, and overall user experience.</li>
+                <li>Integrated Firebase services into active company projects, ensuring robust data management and seamless backend connectivity during the training period.</li>
               </ul>
             </div>
           </div>
