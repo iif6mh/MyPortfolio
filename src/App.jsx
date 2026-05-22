@@ -198,7 +198,7 @@ function App() {
               <p className="timeline-date">June 2025 - August 2025</p>
               <ul className="timeline-desc" style={{ paddingLeft: '20px', margin: 0, marginTop: '12px' }}>
                 <li style={{ marginBottom: '8px' }}>Redesigned the company's website interfaces, covering 9+ pages, improving visual hierarchy, layout consistency, and overall user experience.</li>
-                <li>Gained hands-on experience in web development, building and improving interfaces using front-end technologies.</li>
+                <li>Gained hands-on experience integrating Firebase into real projects during the training period.</li>
               </ul>
             </div>
           </div>
