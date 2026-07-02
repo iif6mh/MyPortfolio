@@ -158,7 +158,7 @@ function App() {
             { name: 'Github', icon: 'devicon-github-original' },
             { name: 'Flutter', icon: 'devicon-flutter-plain' },
             { name: 'SQL', icon: 'devicon-mysql-plain' },
-            { name: 'AI & Machine Learning', icon: 'devicon-tensorflow-original' },
+            { name: 'AI & Deep Learning', icon: 'devicon-tensorflow-original' },
             { name: 'Firebase', icon: 'devicon-firebase-plain' }
           ].map((skill, index) => (
             <div key={index} className="skill-tag">
@@ -548,7 +548,7 @@ function App() {
           <h1 className="details-title">SafeLeaf</h1>
         </div>
         <p className="details-desc">
-          SafeLeaf is an AI-based image recognition system designed to identify and classify toxic and non-toxic plants that may be harmful to children and pets. Using machine learning and computer vision techniques, the system analyzes plant images and delivers accurate predictions. The AI model was integrated into a mobile application to enhance accessibility and provide a smooth, user-friendly experience.
+          SafeLeaf is an AI-based image recognition system designed to identify and classify toxic and non-toxic plants that may be toxic to children and pets. Using Deep learning and computer vision techniques, the system analyzes plant images and delivers accurate predictions. The AI model was integrated into a mobile application to enhance accessibility and provide a smooth, user-friendly experience.
         </p>
       </div>
 
