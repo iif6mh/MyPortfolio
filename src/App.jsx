@@ -784,10 +784,10 @@ Avg Satisfaction = AVERAGE(Fact_Hospital_Activity[Satisfaction])`}
       <div className="details-header-section">
         <div className="details-title-row">
           <div className="details-line"></div>
-          <h1 className="details-title">HR Analytics Dashboard</h1>
+          <h1 className="details-title">HR Workforce Analytics Dashboard</h1>
         </div>
         <p className="details-desc">
-          A comprehensive human resources dashboard built to monitor workforce metrics. It visualizes employee turnover rates, demographic distribution, and departmental performance, providing actionable insights for HR strategies and talent retention.
+          An interactive Power BI dashboard designed with department-level filtering, integrating UX principles for clarity and decision-support to effectively monitor workforce metrics and retention risks.
         </p>
       </div>
 
@@ -799,6 +799,27 @@ Avg Satisfaction = AVERAGE(Fact_Hospital_Activity[Satisfaction])`}
         <div className="details-image-container">
           <img src="/hr-dash.png" alt="HR Analytics Dashboard" className="details-image" />
         </div>
+      </div>
+
+      <div className="details-section">
+        <div className="details-title-row">
+          <div className="details-line"></div>
+          <h2 className="details-section-title">Data Architecture & DAX</h2>
+        </div>
+        <ul className="timeline-desc" style={{ paddingLeft: '20px', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+          <li style={{ marginBottom: '8px' }}><strong>Data Transformation:</strong> Cleaned and modeled employee data using Power Query, structuring it into a star schema containing fact and dimension tables for streamlined workforce analysis.</li>
+          <li><strong>Custom Measures:</strong> Built dynamic DAX measures calculating key HR metrics, including attrition rate, average tenure, and average monthly income.</li>
+        </ul>
+      </div>
+
+      <div className="details-section">
+        <div className="details-title-row">
+          <div className="details-line"></div>
+          <h2 className="details-section-title">Key Insights & Findings</h2>
+        </div>
+        <ul className="timeline-desc" style={{ paddingLeft: '20px', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+          <li><strong>Retention Risk Identification:</strong> Data analysis revealed that employees working overtime had nearly double the attrition rate compared to those with standard hours, highlighting overtime as a critical retention risk factor for HR management.</li>
+        </ul>
       </div>
     </div>
   );
