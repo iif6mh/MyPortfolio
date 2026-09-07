@@ -85,7 +85,7 @@ function App() {
         </div>
         <h1 className="name">Hi, I'm Fatimah Almaki</h1>
         <div className="role-pill">
-          UI/UX Designer | Software Developer | Data Analytics | BI Enthusiast
+          UI/UX Designer | Software Developer | Data Analytics & BI Enthusiast
         </div>
         <p className="bio">
           I design and develop user-focused digital experiences that are intuitive, visually clean, and functional, combining thoughtful UI design with efficient development to create impactful products.
@@ -130,7 +130,8 @@ function App() {
         <div className="about-pills">
           <div className="role-pill">Computer Science and Information Technology 🎓</div>
           <div className="role-pill">UI/UX Designer 🎨</div>
-          <div className="role-pill">Frontend Developer 💻</div>
+          <div className="role-pill">Software Developer 💻</div>
+          <div className="role-pill">Data Analytics & BI Enthusiast 📊</div>
         </div>
         
         <p className="bio" style={{ maxWidth: '650px', margin: '0 auto 24px', color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.05rem', textAlign: 'center', textWrap: 'balance' }}>
@@ -157,9 +158,11 @@ function App() {
             { name: 'Python', icon: 'devicon-python-plain' },
             { name: 'Github', icon: 'devicon-github-original' },
             { name: 'Flutter', icon: 'devicon-flutter-plain' },
-            { name: 'SQL and MySQL', icon: 'devicon-mysql-plain' },
+            { name: 'SQL & MySQL', icon: 'devicon-mysql-plain' },
             { name: 'AI & Deep Learning', icon: 'devicon-tensorflow-original' },
-            { name: 'Firebase', icon: 'devicon-firebase-plain' }
+            { name: 'Firebase', icon: 'devicon-firebase-plain' },
+            { name: 'Power BI', icon: 'devicon-microsoft-original' },
+            { name: 'MS Office', icon: 'devicon-windows8-original' }
           ].map((skill, index) => (
             <div key={index} className="skill-tag">
               <i className={skill.icon} style={{ fontSize: '1.2rem' }}></i> {skill.name}
