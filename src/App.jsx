@@ -220,7 +220,6 @@ function App() {
             </div>
           </div>
 
-                  <div className="timeline-container">
           <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="timeline-content">
