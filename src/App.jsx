@@ -6,6 +6,19 @@ function App() {
 
   const projectsData = [
     {
+      id: 6,
+      year: '2026',
+      title: 'Hospital Dashboard',
+      category: 'Data Analytics • Power BI',
+      image: '/hospital-thumb.png',
+    },
+    {
+      id: 7,
+      year: '2026',
+      title: 'HR Analytics',
+      category: 'Data Analytics • Power BI',
+      image: '/hr-thumb.png',
+    },
       id: 1,
       year: '2026',
       title: 'SafeLeaf',
