@@ -85,7 +85,7 @@ function App() {
         </div>
         <h1 className="name">Hi, I'm Fatimah Almaki</h1>
         <div className="role-pill">
-          UI/UX Designer | Software Developer | Data Analytics & BI Enthusiast
+          UI/UX Designer | Software Developer | Data Analytics | BI Enthusiast
         </div>
         <p className="bio">
           I design and develop user-focused digital experiences that are intuitive, visually clean, and functional, combining thoughtful UI design with efficient development to create impactful products.
