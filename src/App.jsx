@@ -4,7 +4,7 @@ import './index.css';
 function App() {
   const [activePage, setActivePage] = useState('home');
 
-  const projectsData = [
+const projectsData = [
     {
       id: 6,
       year: '2026',
@@ -19,6 +19,7 @@ function App() {
       category: 'Data Analytics • Power BI',
       image: '/hr-thumb.png',
     },
+    {
       id: 1,
       year: '2026',
       title: 'SafeLeaf',
@@ -52,20 +53,6 @@ function App() {
       title: 'Lahj | لهج',
       category: 'UI/UX',
       image: '/project5.png',
-    },
-    {
-      id: 6,
-      year: '2026',
-      title: 'Hospital Dashboard',
-      category: 'Data Analytics • Power BI',
-      image: '/hospital-thumb.png',
-    },
-    {
-      id: 7,
-      year: '2026',
-      title: 'HR Analytics',
-      category: 'Data Analytics • Power BI',
-      image: '/hr-thumb.png',
     }
   ];
 
