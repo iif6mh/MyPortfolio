@@ -39,9 +39,22 @@ function App() {
       title: 'Lahj | لهج',
       category: 'UI/UX',
       image: '/project5.png',
+    },
+    {
+      id: 6,
+      year: '2026',
+      title: 'Hospital Dashboard',
+      category: 'Data Analytics • Power BI',
+      image: '/hospital-thumb.png',
+    },
+    {
+      id: 7,
+      year: '2026',
+      title: 'HR Analytics',
+      category: 'Data Analytics • Power BI',
+      image: '/hr-thumb.png',
     }
   ];
-
 
   const handleProjectClick = (id) => {
     if (id === 1) {
@@ -64,12 +77,20 @@ function App() {
       setActivePage('lahj');
       window.location.hash = 'lahj';
       window.scrollTo(0, 0);
+    } else if (id === 6) {
+      setActivePage('hospital');
+      window.location.hash = 'hospital';
+      window.scrollTo(0, 0);
+    } else if (id === 7) {
+      setActivePage('hr');
+      window.location.hash = 'hr';
+      window.scrollTo(0, 0);
     }
   };
 
   React.useEffect(() => {
     const hash = window.location.hash.replace('#', '');
-    if (hash && ['safeleaf', 'hotelbuddy', 'gcwebsite', 'freshfork', 'lahj'].includes(hash)) {
+    if (hash && ['safeleaf', 'hotelbuddy', 'gcwebsite', 'freshfork', 'lahj', 'hospital', 'hr'].includes(hash)) {
       setActivePage(hash);
     }
   }, []);
@@ -187,6 +208,7 @@ function App() {
           </div>
         </div>
       </div>
+
       <div className="details-section">
         <div className="details-title-row">
           <div className="details-line"></div>
@@ -214,6 +236,7 @@ function App() {
           <h2 className="details-section-title">Certificates</h2>
         </div>
         <div className="timeline-container">
+          
           <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="timeline-content">
@@ -258,6 +281,7 @@ function App() {
               <p className="timeline-date" style={{ marginBottom: 0 }}>Issued Jul 2024</p>
             </div>
           </div>
+          
         </div>
       </div>
     </div>
@@ -653,6 +677,54 @@ function App() {
     </div>
   );
 
+  const renderHospitalDetails = () => (
+    <div className="project-details fade-in">
+      <div className="details-header-section">
+        <div className="details-title-row">
+          <div className="details-line"></div>
+          <h1 className="details-title">Hospital Dashboard</h1>
+        </div>
+        <p className="details-desc">
+          An interactive Power BI dashboard designed to analyze hospital operational data. The dashboard tracks key performance indicators (KPIs) such as patient admissions, department efficiency, and resource utilization, enabling data-driven decision-making for healthcare management.
+        </p>
+      </div>
+
+      <div className="details-section">
+        <div className="details-title-row">
+          <div className="details-line"></div>
+          <h2 className="details-section-title">Dashboard Overview</h2>
+        </div>
+        <div className="details-image-container">
+          <img src="/hospital-dash.png" alt="Hospital Dashboard" className="details-image" />
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderHRDetails = () => (
+    <div className="project-details fade-in">
+      <div className="details-header-section">
+        <div className="details-title-row">
+          <div className="details-line"></div>
+          <h1 className="details-title">HR Analytics Dashboard</h1>
+        </div>
+        <p className="details-desc">
+          A comprehensive human resources dashboard built to monitor workforce metrics. It visualizes employee turnover rates, demographic distribution, and departmental performance, providing actionable insights for HR strategies and talent retention.
+        </p>
+      </div>
+
+      <div className="details-section">
+        <div className="details-title-row">
+          <div className="details-line"></div>
+          <h2 className="details-section-title">Dashboard Overview</h2>
+        </div>
+        <div className="details-image-container">
+          <img src="/hr-dash.png" alt="HR Analytics Dashboard" className="details-image" />
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <>
       <div className="container">
@@ -665,7 +737,15 @@ function App() {
           </div>
         </nav>
         
-        {activePage === 'about' ? renderAbout() : activePage === 'home' ? renderHome() : activePage === 'safeleaf' ? renderSafeLeafDetails() : activePage === 'hotelbuddy' ? renderProjectDetails() : activePage === 'gcwebsite' ? renderGCWebsiteDetails() : activePage === 'freshfork' ? renderFreshForkDetails() : renderLahjDetails()}
+        {activePage === 'about' ? renderAbout() : 
+         activePage === 'home' ? renderHome() : 
+         activePage === 'safeleaf' ? renderSafeLeafDetails() : 
+         activePage === 'hotelbuddy' ? renderProjectDetails() : 
+         activePage === 'gcwebsite' ? renderGCWebsiteDetails() : 
+         activePage === 'freshfork' ? renderFreshForkDetails() : 
+         activePage === 'hospital' ? renderHospitalDetails() : 
+         activePage === 'hr' ? renderHRDetails() : 
+         renderLahjDetails()}
         
       </div>
       
