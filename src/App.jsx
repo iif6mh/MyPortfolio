@@ -4,7 +4,7 @@ import './index.css';
 function App() {
   const [activePage, setActivePage] = useState('home');
 
-const projectsData = [
+  const projectsData = [
     {
       id: 6,
       year: '2026',
@@ -109,7 +109,7 @@ const projectsData = [
           UI/UX Designer | Software Developer | Data Analytics & BI Enthusiast
         </div>
         <p className="bio">
-          I design and develop user-focused digital experiences that are intuitive, visually clean, and functional, combining thoughtful UI design with efficient development to create impactful products.
+          A Computer Science professional specializing in the intersection of UI/UX design, frontend development, and data analytics. Dedicated to building intuitive digital products and leveraging business intelligence to drive data-informed user experiences and operational efficiency.
         </p>
       </section>
 
@@ -156,8 +156,7 @@ const projectsData = [
         </div>
         
         <p className="bio" style={{ maxWidth: '650px', margin: '0 auto 24px', color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.05rem', textAlign: 'center', textWrap: 'balance' }}>
-          I specialize in crafting digital experiences that are not only beautiful but also highly functional. 
-          My background in computer science allows me to understand the technical side of development while maintaining a strong focus on user-centric design.
+          With a strong foundation in Computer Science, expertise is applied across UI/UX design, web development, and data analytics. The focus lies in transforming complex data into actionable insights, while designing and engineering user-centric digital solutions. By bridging the gap between analytical metrics and human-computer interaction, products are developed to be both highly functional and visually compelling.
         </p>
       </div>
 
@@ -677,7 +676,7 @@ const projectsData = [
     </div>
   );
 
-const renderHospitalDetails = () => (
+  const renderHospitalDetails = () => (
     <div className="project-details fade-in">
       <div className="details-header-section">
         <div className="details-title-row">
