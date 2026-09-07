@@ -89,10 +89,23 @@ function App() {
   };
 
   React.useEffect(() => {
-    const hash = window.location.hash.replace('#', '');
-    if (hash && ['safeleaf', 'hotelbuddy', 'gcwebsite', 'freshfork', 'lahj', 'hospital', 'hr'].includes(hash)) {
-      setActivePage(hash);
-    }
+
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      const validPages = ['about', 'safeleaf', 'hotelbuddy', 'gcwebsite', 'freshfork', 'lahj', 'hospital', 'hr'];
+      
+    
+      if (validPages.includes(hash)) {
+        setActivePage(hash);
+      } else {
+         setActivePage('home');
+      }
+    };
+   handleHashChange();
+
+   window.addEventListener('hashchange', handleHashChange);
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   const renderHome = () => (
