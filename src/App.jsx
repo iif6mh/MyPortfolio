@@ -677,15 +677,15 @@ function App() {
     </div>
   );
 
-  const renderHospitalDetails = () => (
+const renderHospitalDetails = () => (
     <div className="project-details fade-in">
       <div className="details-header-section">
         <div className="details-title-row">
           <div className="details-line"></div>
-          <h1 className="details-title">Hospital Dashboard</h1>
+          <h1 className="details-title">Hospital Clinical & Operational Performance Analytics</h1>
         </div>
         <p className="details-desc">
-          An interactive Power BI dashboard designed to analyze hospital operational data. The dashboard tracks key performance indicators (KPIs) such as patient admissions, department efficiency, and resource utilization, enabling data-driven decision-making for healthcare management.
+          An end-to-end Healthcare Business Intelligence dashboard developed in Power BI to monitor clinical outcomes, operational efficiency, and financial performance across 984 inpatient encounter records.
         </p>
       </div>
 
@@ -696,6 +696,84 @@ function App() {
         </div>
         <div className="details-image-container">
           <img src="/hospital-dash.png" alt="Hospital Dashboard" className="details-image" />
+        </div>
+      </div>
+
+      <div className="details-section">
+        <div className="details-title-row">
+          <div className="details-line"></div>
+          <h2 className="details-section-title">Data Architecture & Star Schema</h2>
+        </div>
+        <ul className="timeline-desc" style={{ paddingLeft: '20px', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+          <li style={{ marginBottom: '8px' }}><strong>Dimensional Modeling:</strong> Transformed flat medical transactional data into a Star Schema structure (Dim_Patients, Dim_Clinical, and Fact_Hospital_Activity).</li>
+          <li><strong>Integrity & Optimization:</strong> Implemented strict 1:* relationships with single-direction cross-filtering.</li>
+        </ul>
+      </div>
+
+      <div className="details-section">
+        <div className="details-title-row">
+          <div className="details-line"></div>
+          <h2 className="details-section-title">Key Performance Indicators (KPIs)</h2>
+        </div>
+        <ul className="timeline-desc" style={{ paddingLeft: '20px', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+          <li style={{ marginBottom: '8px' }}><strong>Total Patients:</strong> 984 Active Encounters</li>
+          <li style={{ marginBottom: '8px' }}><strong>Total Medical Revenue:</strong> $8.23M</li>
+          <li style={{ marginBottom: '8px' }}><strong>Average Length of Stay (ALOS):</strong> 37.7 Days</li>
+          <li style={{ marginBottom: '8px' }}><strong>30-Day Readmission Rate:</strong> 26.83%</li>
+          <li><strong>Patient Satisfaction Score:</strong> 3.60 / 5.0 (Benchmark: 4.50)</li>
+        </ul>
+      </div>
+
+      <div className="details-section">
+        <div className="details-title-row">
+          <div className="details-line"></div>
+          <h2 className="details-section-title">Core SQL Queries</h2>
+        </div>
+        <div style={{ backgroundColor: '#1e1e1e', padding: '20px', borderRadius: '12px', overflowX: 'auto', marginTop: '16px' }}>
+          <pre style={{ margin: 0, color: '#d4d4d4', fontFamily: 'monospace', fontSize: '0.95rem', lineHeight: '1.6' }}>
+{`SELECT 
+    c.Condition,
+    COUNT(f.Patient_ID) AS Total_Patients,
+    SUM(f.Cost) AS Total_Cost,
+    AVG(f.Length_of_Stay) AS Avg_Stay_Days
+FROM Fact_Hospital_Activity f
+JOIN Dim_Clinical c ON f.Clinical_ID = c.Clinical_ID
+GROUP BY c.Condition
+ORDER BY Total_Patients DESC;
+
+-- Readmission Rate Calculation
+SELECT 
+    Readmission,
+    COUNT(Patient_ID) AS Patient_Count,
+    ROUND(COUNT(Patient_ID) * 100.0 / (SELECT COUNT(*) FROM Fact_Hospital_Activity), 2) AS Percentage
+FROM Fact_Hospital_Activity
+GROUP BY Readmission;`}
+          </pre>
+        </div>
+      </div>
+
+      <div className="details-section">
+        <div className="details-title-row">
+          <div className="details-line"></div>
+          <h2 className="details-section-title">📐 Key DAX Measures</h2>
+        </div>
+        <div style={{ backgroundColor: '#1e1e1e', padding: '20px', borderRadius: '12px', overflowX: 'auto', marginTop: '16px' }}>
+          <pre style={{ margin: 0, color: '#d4d4d4', fontFamily: 'monospace', fontSize: '0.95rem', lineHeight: '1.6' }}>
+{`Total Patients = COUNTROWS(Fact_Hospital_Activity)
+
+Total Cost = SUM(Fact_Hospital_Activity[Cost])
+
+Avg Length of Stay = AVERAGE(Fact_Hospital_Activity[Length_of_Stay])
+
+Readmission Rate % = 
+DIVIDE(
+    CALCULATE([Total Patients], Fact_Hospital_Activity[Readmission] = "Yes"),
+    [Total Patients],
+    0
+)
+
+Avg Satisfaction = AVERAGE(Fact_Hospital_Activity[Satisfaction])`}
+          </pre>
         </div>
       </div>
     </div>
