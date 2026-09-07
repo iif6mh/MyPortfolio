@@ -157,7 +157,7 @@ function App() {
             { name: 'Python', icon: 'devicon-python-plain' },
             { name: 'Github', icon: 'devicon-github-original' },
             { name: 'Flutter', icon: 'devicon-flutter-plain' },
-            { name: 'SQL&MySQL', icon: 'devicon-mysql-plain' },
+            { name: 'SQL and MySQL', icon: 'devicon-mysql-plain' },
             { name: 'AI & Deep Learning', icon: 'devicon-tensorflow-original' },
             { name: 'Firebase', icon: 'devicon-firebase-plain' }
           ].map((skill, index) => (
