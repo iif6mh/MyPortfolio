@@ -30,7 +30,7 @@ function App() {
       id: 4,
       year: '2025',
       title: 'FreshFork',
-      category: 'UI/UX • Frontend Development',
+      category: 'UI/UX • Software Development',
       image: '/project4.png',
     },
     {
@@ -85,7 +85,7 @@ function App() {
         </div>
         <h1 className="name">Hi, I'm Fatimah Almaki</h1>
         <div className="role-pill">
-          UI/UX Designer & Frontend Developer
+          UI/UX Designer | Software Developer | Data Analytics & BI Enthusiast
         </div>
         <p className="bio">
           I design and develop user-focused digital experiences that are intuitive, visually clean, and functional, combining thoughtful UI design with efficient development to create impactful products.
@@ -157,7 +157,7 @@ function App() {
             { name: 'Python', icon: 'devicon-python-plain' },
             { name: 'Github', icon: 'devicon-github-original' },
             { name: 'Flutter', icon: 'devicon-flutter-plain' },
-            { name: 'SQL', icon: 'devicon-mysql-plain' },
+            { name: 'SQL&MySQL', icon: 'devicon-mysql-plain' },
             { name: 'AI & Deep Learning', icon: 'devicon-tensorflow-original' },
             { name: 'Firebase', icon: 'devicon-firebase-plain' }
           ].map((skill, index) => (
@@ -211,6 +211,25 @@ function App() {
           <h2 className="details-section-title">Certificates</h2>
         </div>
         <div className="timeline-container">
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <h3 className="timeline-title">Virtual Data Analysis Work Experience</h3>
+              <h4 className="timeline-subtitle" style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}> STC × Misk</h4>
+              <p className="timeline-date" style={{ marginBottom: 0 }}>Issued August 2026</p>
+            </div>
+          </div>
+
+                  <div className="timeline-container">
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <h3 className="timeline-title">Power BI 101, 102 & 103 </h3>
+              <h4 className="timeline-subtitle" style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}> Satr Platform </h4>
+              <p className="timeline-date" style={{ marginBottom: 0 }}>Issued August 2026</p>
+            </div>
+          </div>
+          
           <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="timeline-content">
