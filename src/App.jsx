@@ -122,7 +122,7 @@ function App() {
           UI/UX Designer | Software Developer | Data Analytics & BI Enthusiast
         </div>
         <p className="bio">
-          A Computer Science professional specializing in the intersection of UI/UX design, frontend development, and data analytics. Dedicated to building intuitive digital products and leveraging business intelligence to drive data-informed user experiences and operational efficiency.
+          A fresh Computer Science graduate specializing in the intersection of UI/UX design, frontend development, and data analytics. Dedicated to building intuitive digital products and leveraging business intelligence to drive data-informed user experiences and operational efficiency.
         </p>
       </section>
 
