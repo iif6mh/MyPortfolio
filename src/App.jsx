@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './index.css';
 
 function App() {
@@ -88,65 +88,97 @@ function App() {
     }
   };
 
-  React.useEffect(() => {
-
+  useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
       const validPages = ['about', 'safeleaf', 'hotelbuddy', 'gcwebsite', 'freshfork', 'lahj', 'hospital', 'hr'];
       
-    
       if (validPages.includes(hash)) {
         setActivePage(hash);
       } else {
          setActivePage('home');
       }
     };
-   handleHashChange();
-
-   window.addEventListener('hashchange', handleHashChange);
-
+    
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const renderHome = () => (
-    <>
-      {/* Hero Section */}
-      <section id="home" className="hero">
-        <div className="avatar-container" style={{ position: 'relative' }}>
-          <div className="floating-emoji" style={{ top: '20%', right: '-5%', animationDelay: '1s' }}>⭐</div>
-          <div className="floating-emoji" style={{ bottom: '10%', left: '-5%', animationDelay: '2s' }}>⭐</div>
-          <img src="/avatar.png" alt="Avatar" className="avatar" />
-        </div>
-        <h1 className="name">Hi, I'm Fatimah Almaki</h1>
-        <div className="role-pill">
-          UI/UX Designer | Software Developer | Data Analytics & BI Enthusiast
-        </div>
-        <p className="bio">
-          A fresh Computer Science graduate specializing in the intersection of UI/UX design, frontend development, and data analytics. Dedicated to building intuitive digital products and leveraging business intelligence to drive data-informed user experiences and operational efficiency.
-        </p>
-      </section>
+  const renderHome = () => {
+    const dataAnalyticsProjects = projectsData.filter(project => project.category.includes('Data Analytics'));
+    const softwareProjects = projectsData.filter(project => !project.category.includes('Data Analytics'));
 
-      {/* Projects Section */}
-      <section id="projects" className="projects-section">
-        {projectsData.map((project) => (
-          <div 
-            key={project.id} 
-            className={`project-item clickable`}
-            onClick={() => handleProjectClick(project.id)}
-          >
-            <div className="project-year">{project.year}</div>
-            <div className="project-title-row">
-              <div className="project-line"></div>
-              <span className="project-title">{project.title} • {project.category}</span>
-            </div>
-            <div className="project-image-container">
-              <img src={project.image} alt={project.title} className="project-image" />
-            </div>
+    return (
+      <>
+        <section id="home" className="hero">
+          <div className="avatar-container" style={{ position: 'relative' }}>
+            <div className="floating-emoji" style={{ top: '20%', right: '-5%', animationDelay: '1s' }}>⭐</div>
+            <div className="floating-emoji" style={{ bottom: '10%', left: '-5%', animationDelay: '2s' }}>⭐</div>
+            <img src="/avatar.png" alt="Avatar" className="avatar" />
           </div>
-        ))}
-      </section>
-    </>
-  );
+          <h1 className="name">Hi, I'm Fatimah Almaki</h1>
+          <div className="role-pill">
+            UI/UX Designer | Software Developer | Data Analytics & BI Enthusiast
+          </div>
+          <p className="bio">
+            A fresh Computer Science graduate specializing in the intersection of UI/UX design, frontend development, and data analytics. Dedicated to building intuitive digital products and leveraging business intelligence to drive data-informed user experiences and operational efficiency.
+          </p>
+        </section>
+
+        <div id="projects" style={{ paddingTop: '20px' }}>
+          
+          <div className="details-title-row" style={{ justifyContent: 'center', marginBottom: '30px' }}>
+            <div className="details-line"></div>
+            <h2 className="details-section-title">Software & Web Development</h2>
+          </div>
+          
+          <section className="projects-section">
+            {softwareProjects.map((project) => (
+              <div 
+                key={project.id} 
+                className={`project-item clickable`}
+                onClick={() => handleProjectClick(project.id)}
+              >
+                <div className="project-year">{project.year}</div>
+                <div className="project-title-row">
+                  <div className="project-line"></div>
+                  <span className="project-title">{project.title} • {project.category}</span>
+                </div>
+                <div className="project-image-container">
+                  <img src={project.image} alt={project.title} className="project-image" />
+                </div>
+              </div>
+            ))}
+          </section>
+
+          <div className="details-title-row" style={{ justifyContent: 'center', marginTop: '60px', marginBottom: '30px' }}>
+            <div className="details-line"></div>
+            <h2 className="details-section-title">Data Analytics</h2>
+          </div>
+
+          <section className="projects-section">
+            {dataAnalyticsProjects.map((project) => (
+              <div 
+                key={project.id} 
+                className={`project-item clickable`}
+                onClick={() => handleProjectClick(project.id)}
+              >
+                <div className="project-year">{project.year}</div>
+                <div className="project-title-row">
+                  <div className="project-line"></div>
+                  <span className="project-title">{project.title} • {project.category}</span>
+                </div>
+                <div className="project-image-container">
+                  <img src={project.image} alt={project.title} className="project-image" />
+                </div>
+              </div>
+            ))}
+          </section>
+        </div>
+      </>
+    );
+  };
 
   const renderAbout = () => (
     <div className="about-page fade-in">
@@ -753,7 +785,6 @@ JOIN Dim_Clinical c ON f.Clinical_ID = c.Clinical_ID
 GROUP BY c.Condition
 ORDER BY Total_Patients DESC;
 
--- Readmission Rate Calculation
 SELECT 
     Readmission,
     COUNT(Patient_ID) AS Patient_Count,
@@ -839,7 +870,7 @@ Avg Satisfaction = AVERAGE(Fact_Hospital_Activity[Satisfaction])`}
   return (
     <>
       <div className="container">
-        {/* Navbar */}
+        
         <nav className="navbar">
           <div className="nav-links">
             <a href="#home" className="nav-link" onClick={() => setActivePage('home')}>Home</a>
@@ -860,7 +891,6 @@ Avg Satisfaction = AVERAGE(Fact_Hospital_Activity[Satisfaction])`}
         
       </div>
       
-      {/* Footer */}
       <footer className="footer" id="contact">
         <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <h2 className="footer-title">Get in Touch</h2>
