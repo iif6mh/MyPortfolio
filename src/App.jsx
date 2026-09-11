@@ -88,12 +88,6 @@ function App() {
     }
   };
 
-  const handleCategoryClick = (category) => {
-    setActivePage(category);
-    window.location.hash = category;
-    window.scrollTo(0, 0);
-  };
-
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
@@ -111,73 +105,67 @@ function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const renderHome = () => (
-    <>
-      <section id="home" className="hero">
-        <div className="avatar-container" style={{ position: 'relative' }}>
-          <div className="floating-emoji" style={{ top: '20%', right: '-5%', animationDelay: '1s' }}>⭐</div>
-          <div className="floating-emoji" style={{ bottom: '10%', left: '-5%', animationDelay: '2s' }}>⭐</div>
-          <img src="/avatar.png" alt="Avatar" className="avatar" />
-        </div>
-        <h1 className="name">Hi, I'm Fatimah Almaki</h1>
-        <div className="role-pill">
-          UI/UX Designer | Software Developer | Data Analytics & BI Enthusiast
-        </div>
-        <p className="bio">
-          A fresh Computer Science graduate specializing in the intersection of UI/UX design, frontend development, and data analytics. Dedicated to building intuitive digital products and leveraging business intelligence to drive data-informed user experiences and operational efficiency.
-        </p>
-      </section>
+  const renderHome = () => {
+    return (
+      <>
+        <section id="home" className="hero">
+          <div className="avatar-container" style={{ position: 'relative' }}>
+            <div className="floating-emoji" style={{ top: '20%', right: '-5%', animationDelay: '1s' }}>⭐</div>
+            <div className="floating-emoji" style={{ bottom: '10%', left: '-5%', animationDelay: '2s' }}>⭐</div>
+            <img src="/avatar.png" alt="Avatar" className="avatar" />
+          </div>
+          <h1 className="name">Hi, I'm Fatimah Almaki</h1>
+          <div className="role-pill">
+            UI/UX Designer | Software Developer | Data Analytics & BI Enthusiast
+          </div>
+          <p className="bio">
+            A fresh Computer Science graduate specializing in the intersection of UI/UX design, frontend development, and data analytics. Dedicated to building intuitive digital products and leveraging business intelligence to drive data-informed user experiences and operational efficiency.
+          </p>
+        </section>
 
-      <section id="projects" className="projects-section">
-        <div 
-          className="project-item clickable"
-          onClick={() => handleCategoryClick('software')}
-        >
-          <div className="project-year">Portfolio</div>
-          <div className="project-title-row">
-            <div className="project-line"></div>
-            <span className="project-title">Software & Web Development</span>
+        <section id="projects" className="projects-section">
+          <div 
+            className="project-item clickable" 
+            onClick={() => { setActivePage('software'); window.location.hash = 'software'; window.scrollTo(0, 0); }}
+          >
+            <div className="project-title-row">
+              <div className="project-line"></div>
+              <span className="project-title">Software & Web Development</span>
+            </div>
+            <div className="project-image-container">
+              <img src="/project 1.png" alt="Software Development" className="project-image" />
+            </div>
           </div>
-          <div className="project-image-container">
-            <img src="/project4.png" alt="Software and Web Development" className="project-image" />
-          </div>
-        </div>
 
-        <div 
-          className="project-item clickable"
-          onClick={() => handleCategoryClick('data')}
-        >
-          <div className="project-year">Portfolio</div>
-          <div className="project-title-row">
-            <div className="project-line"></div>
-            <span className="project-title">Data Analytics</span>
+          <div 
+            className="project-item clickable" 
+            onClick={() => { setActivePage('data'); window.location.hash = 'data'; window.scrollTo(0, 0); }}
+          >
+            <div className="project-title-row">
+              <div className="project-line"></div>
+              <span className="project-title">Data Analytics & BI</span>
+            </div>
+            <div className="project-image-container">
+              <img src="/hospital-thumb.png" alt="Data Analytics" className="project-image" />
+            </div>
           </div>
-          <div className="project-image-container">
-            <img src="/hospital-thumb.png" alt="Data Analytics" className="project-image" />
-          </div>
-        </div>
-      </section>
-    </>
-  );
+        </section>
+      </>
+    );
+  };
 
-  const renderCategoryList = (categoryType) => {
-    const filteredProjects = categoryType === 'software'
+  const renderCategoryPage = (type) => {
+    const filteredProjects = type === 'software' 
       ? projectsData.filter(project => !project.category.includes('Data Analytics'))
       : projectsData.filter(project => project.category.includes('Data Analytics'));
 
-    const categoryTitle = categoryType === 'software' ? 'Software & Web Development' : 'Data Analytics';
-
     return (
-      <div className="fade-in" style={{ paddingTop: '100px', paddingBottom: '60px' }}>
-        <div className="details-title-row" style={{ justifyContent: 'center', marginBottom: '50px' }}>
-          <div className="details-line"></div>
-          <h1 className="details-section-title" style={{ fontSize: '2rem' }}>{categoryTitle}</h1>
-        </div>
+      <div className="fade-in" style={{ paddingTop: '40px', minHeight: '60vh' }}>
         <section className="projects-section">
           {filteredProjects.map((project) => (
             <div 
               key={project.id} 
-              className={`project-item clickable`}
+              className="project-item clickable"
               onClick={() => handleProjectClick(project.id)}
             >
               <div className="project-year">{project.year}</div>
@@ -437,6 +425,7 @@ function App() {
           <img src="/HotelMK.png" alt="Mockups" className="details-image" />
         </div>
       </div>
+
     </div>
   );
 
@@ -450,6 +439,7 @@ function App() {
         <p className="details-desc">
           This mobile application designed to promote and facilitate heritage tourism in Saudi Arabia for international visitors. The app serves as an all-in-one travel companion, from booking a flight to discovering ancient landmarks. It built to make Saudi Arabia's rich cultural destinations accessible and appealing to a global audience.
         </p>
+
       </div>
 
       <div className="details-section">
@@ -894,8 +884,8 @@ Avg Satisfaction = AVERAGE(Fact_Hospital_Activity[Satisfaction])`}
         
         {activePage === 'about' ? renderAbout() : 
          activePage === 'home' ? renderHome() : 
-         activePage === 'software' ? renderCategoryList('software') :
-         activePage === 'data' ? renderCategoryList('data') :
+         activePage === 'software' ? renderCategoryPage('software') :
+         activePage === 'data' ? renderCategoryPage('data') :
          activePage === 'safeleaf' ? renderSafeLeafDetails() : 
          activePage === 'hotelbuddy' ? renderProjectDetails() : 
          activePage === 'gcwebsite' ? renderGCWebsiteDetails() : 
