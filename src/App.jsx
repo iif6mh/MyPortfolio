@@ -202,11 +202,11 @@ function App() {
           <div className="role-pill">Software Developer 💻</div>
           <div className="role-pill">Data Analytics & BI Enthusiast 📊</div>
         </div>
-        <div>
+      
         <p className="bio" style={{ maxWidth: '650px', margin: '0 auto 24px', color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.05rem', textAlign: 'center', textWrap: 'balance' }}>
           Computer Science graduate passionate about turning data and user needs into practical digital solutions. I work across data analytics, systems analysis, UI/UX design, and web development, with a focus on building products that are functional, intuitive, and insight-driven.
         </p>
-      </div>
+    
 
       <div className="details-section">
         <div className="details-title-row">
