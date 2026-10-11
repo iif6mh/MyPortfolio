@@ -96,7 +96,7 @@ function App() {
       if (validPages.includes(hash)) {
         setActivePage(hash);
       } else {
-         setActivePage('home');
+        setActivePage('home');
       }
     };
     
@@ -116,7 +116,7 @@ function App() {
           </div>
           <h1 className="name">Hi, I'm Fatimah Almaki</h1>
           <div className="role-pill">
-            UI/UX Designer & Software Developer | Data Analytics & BI Enthusiast
+            UI/UX Designer &amp; Software Developer | Data Analytics &amp; BI Enthusiast
           </div>
           <p className="bio">
             Fresh Computer Science graduate combining data analytics, systems analysis, UI/UX design, and software development. I turn business and user requirements into intuitive, data-driven solutions that improve efficiency.
@@ -130,7 +130,7 @@ function App() {
           >
             <div className="project-title-row">
               <div className="project-line"></div>
-              <span className="project-title">Software & Web Development</span>
+              <span className="project-title">Software &amp; Web Development</span>
             </div>
             <div className="project-image-container">
               <img src="/project 1.png" alt="Software Development" className="project-image" />
@@ -143,7 +143,7 @@ function App() {
           >
             <div className="project-title-row">
               <div className="project-line"></div>
-              <span className="project-title">Data Analytics & BI</span>
+              <span className="project-title">Data Analytics &amp; BI</span>
             </div>
             <div className="project-image-container">
               <img src="/hospital-thumb.png" alt="Data Analytics" className="project-image" />
@@ -165,7 +165,7 @@ function App() {
           {filteredProjects.map((project) => (
             <div 
               key={project.id} 
-              className="project-item clickable"
+              className="project-item clickable" 
               onClick={() => handleProjectClick(project.id)}
             >
               <div className="project-year">{project.year}</div>
@@ -200,42 +200,42 @@ function App() {
           <div className="role-pill">Computer Science and Information Technology 🎓</div>
           <div className="role-pill">UI/UX Designer 🎨</div>
           <div className="role-pill">Software Developer 💻</div>
-          <div className="role-pill">Data Analytics & BI Enthusiast 📊</div>
+          <div className="role-pill">Data Analytics &amp; BI Enthusiast 📊</div>
         </div>
       
-        <p className="bio" style={{ maxWidth: '650px', margin: '0 auto 24px', color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.05rem', textAlign: 'center', textWrap: 'balance' }}>
+        <p className="bio" style={{ maxWidth: '650px', margin: '0 auto 24px', color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.05rem', textAlign: 'center' }}>
           Computer Science graduate passionate about turning data and user needs into practical digital solutions. I work across data analytics, systems analysis, UI/UX design, and web development, with a focus on building products that are functional, intuitive, and insight-driven.
         </p>
-    
+      </div>
 
       <div className="details-section">
         <div className="details-title-row">
           <div className="details-line"></div>
-          <h2 className="details-section-title">Skills & Tools</h2>
+          <h2 className="details-section-title">Skills &amp; Tools</h2>
         </div>
         <div className="skills-grid">
           {[
-         { name: 'Requirements Analysis', icon: 'fa-solid fa-clipboard-list' },
-    { name: 'UML & BPMN', icon: 'fa-solid fa-diagram-project' },
-    { name: 'Agile / Scrum', icon: 'fa-solid fa-arrows-spin' },
-    { name: 'SQL & MySQL', icon: 'devicon-mysql-plain' },
-    { name: 'Power BI & DAX', icon: 'devicon-microsoft-original' },
-    { name: 'Excel', icon: 'fa-solid fa-file-excel' },
-    { name: 'Data Modeling', icon: 'fa-solid fa-database' },
-    { name: 'Python (Pandas)', icon: 'devicon-pandas-original' },
-    { name: 'AI & Deep Learning', icon: 'devicon-tensorflow-original' },
-    { name: 'Figma', icon: 'devicon-figma-plain' },
-    { name: 'HTML', icon: 'devicon-html5-plain' },
-    { name: 'CSS', icon: 'devicon-css3-plain' },
-    { name: 'JS', icon: 'devicon-javascript-plain' },
-    { name: 'React', icon: 'devicon-react-original' },
-    { name: 'Flutter', icon: 'devicon-flutter-plain' },
-    { name: 'Firebase', icon: 'devicon-firebase-plain' },
-    { name: 'Java', icon: 'devicon-java-plain' },
-    { name: 'C++', icon: 'devicon-cplusplus-plain' },
-    { name: 'PHP', icon: 'devicon-php-plain' },
-    { name: 'Github', icon: 'devicon-github-original' },
-    { name: 'MS Office', icon: 'devicon-windows8-original' }
+            { name: 'Requirements Analysis', icon: 'fa-solid fa-clipboard-list' },
+            { name: 'UML & BPMN', icon: 'fa-solid fa-diagram-project' },
+            { name: 'Agile / Scrum', icon: 'fa-solid fa-arrows-spin' },
+            { name: 'SQL & MySQL', icon: 'devicon-mysql-plain' },
+            { name: 'Power BI & DAX', icon: 'devicon-microsoft-original' },
+            { name: 'Excel', icon: 'fa-solid fa-file-excel' },
+            { name: 'Data Modeling', icon: 'fa-solid fa-database' },
+            { name: 'Python (Pandas)', icon: 'devicon-pandas-original' },
+            { name: 'AI & Deep Learning', icon: 'devicon-tensorflow-original' },
+            { name: 'Figma', icon: 'devicon-figma-plain' },
+            { name: 'HTML', icon: 'devicon-html5-plain' },
+            { name: 'CSS', icon: 'devicon-css3-plain' },
+            { name: 'JS', icon: 'devicon-javascript-plain' },
+            { name: 'React', icon: 'devicon-react-original' },
+            { name: 'Flutter', icon: 'devicon-flutter-plain' },
+            { name: 'Firebase', icon: 'devicon-firebase-plain' },
+            { name: 'Java', icon: 'devicon-java-plain' },
+            { name: 'C++', icon: 'devicon-cplusplus-plain' },
+            { name: 'PHP', icon: 'devicon-php-plain' },
+            { name: 'Github', icon: 'devicon-github-original' },
+            { name: 'MS Office', icon: 'devicon-windows8-original' }
           ].map((skill, index) => (
             <div key={index} className="skill-tag">
               <i className={skill.icon} style={{ fontSize: '1.2rem' }}></i> {skill.name}
@@ -271,7 +271,7 @@ function App() {
             <div className="timeline-dot"></div>
             <div className="timeline-content">
               <h3 className="timeline-title">COOP Training</h3>
-              <h4 className="timeline-subtitle" style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '4px' }}>GULF CONSULT Architects & Engineers | Al Khobar, SA</h4>
+              <h4 className="timeline-subtitle" style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '4px' }}>GULF CONSULT Architects &amp; Engineers | Al Khobar, SA</h4>
               <p className="timeline-date">June 2025 - August 2025</p>
               <ul className="timeline-desc" style={{ paddingLeft: '20px', margin: 0, marginTop: '12px' }}>
                 <li style={{ marginBottom: '8px' }}>Redesigned 9 pages of the company's website interfaces using Figma, increasing the visual hierarchy, layout consistency and user experience.</li>
@@ -288,7 +288,6 @@ function App() {
           <h2 className="details-section-title">Certificates</h2>
         </div>
         <div className="timeline-container">
-          
           <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="timeline-content">
@@ -301,7 +300,7 @@ function App() {
           <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="timeline-content">
-              <h3 className="timeline-title">Power BI 101, 102 & 103 </h3>
+              <h3 className="timeline-title">Power BI 101, 102 &amp; 103 </h3>
               <h4 className="timeline-subtitle" style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}> Satr Platform </h4>
               <p className="timeline-date" style={{ marginBottom: 0 }}>Issued August 2026</p>
             </div>
@@ -320,7 +319,7 @@ function App() {
             <div className="timeline-dot"></div>
             <div className="timeline-content">
               <h3 className="timeline-title">Google UX Design Professional Certificate</h3>
-              <h4 className="timeline-subtitle" style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Coursera & Google</h4>
+              <h4 className="timeline-subtitle" style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Coursera &amp; Google</h4>
               <p className="timeline-date" style={{ marginBottom: 0 }}>Issued Aug 2025</p>
             </div>
           </div>
@@ -328,12 +327,11 @@ function App() {
           <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="timeline-content">
-              <h3 className="timeline-title">UX/UI Design Principles Compact (Theory & Figma Exercise)</h3>
+              <h3 className="timeline-title">UX/UI Design Principles Compact (Theory &amp; Figma Exercise)</h3>
               <h4 className="timeline-subtitle" style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '8px' }}>Udemy</h4>
               <p className="timeline-date" style={{ marginBottom: 0 }}>Issued Jul 2024</p>
             </div>
           </div>
-          
         </div>
       </div>
     </div>
@@ -430,7 +428,6 @@ function App() {
           <img src="/HotelMK.png" alt="Mockups" className="details-image" />
         </div>
       </div>
-
     </div>
   );
 
@@ -444,7 +441,6 @@ function App() {
         <p className="details-desc">
           This mobile application designed to promote and facilitate heritage tourism in Saudi Arabia for international visitors. The app serves as an all-in-one travel companion, from booking a flight to discovering ancient landmarks. It built to make Saudi Arabia's rich cultural destinations accessible and appealing to a global audience.
         </p>
-
       </div>
 
       <div className="details-section">
@@ -493,6 +489,7 @@ function App() {
           <img src="/LahjUF.png" alt="User Flow" className="details-image" />
         </div>
       </div>
+
       <div className="details-section">
         <div className="details-title-row">
           <div className="details-line"></div>
@@ -524,6 +521,7 @@ function App() {
           <img src="/LahjWF.png" alt="Low-fid wireframe" className="details-image" />
         </div>
       </div>
+
       <div className="details-section">
         <div className="details-title-row">
           <div className="details-line"></div>
@@ -734,7 +732,7 @@ function App() {
       <div className="details-header-section">
         <div className="details-title-row">
           <div className="details-line"></div>
-          <h1 className="details-title">Hospital Clinical & Operational Performance Analytics</h1>
+          <h1 className="details-title">Hospital Clinical &amp; Operational Performance Analytics</h1>
         </div>
         <p className="details-desc">
           An end-to-end Healthcare Business Intelligence dashboard developed in Power BI to monitor clinical outcomes, operational efficiency, and financial performance across 984 inpatient encounter records.
@@ -754,11 +752,11 @@ function App() {
       <div className="details-section">
         <div className="details-title-row">
           <div className="details-line"></div>
-          <h2 className="details-section-title">Data Architecture & Star Schema</h2>
+          <h2 className="details-section-title">Data Architecture &amp; Star Schema</h2>
         </div>
         <ul className="timeline-desc" style={{ paddingLeft: '20px', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.8' }}>
           <li style={{ marginBottom: '8px' }}><strong>Dimensional Modeling:</strong> Transformed flat medical transactional data into a Star Schema structure (Dim_Patients, Dim_Clinical, and Fact_Hospital_Activity).</li>
-          <li><strong>Integrity & Optimization:</strong> Implemented strict 1:* relationships with single-direction cross-filtering.</li>
+          <li><strong>Integrity &amp; Optimization:</strong> Implemented strict 1:* relationships with single-direction cross-filtering.</li>
         </ul>
       </div>
 
@@ -855,7 +853,7 @@ Avg Satisfaction = AVERAGE(Fact_Hospital_Activity[Satisfaction])`}
       <div className="details-section">
         <div className="details-title-row">
           <div className="details-line"></div>
-          <h2 className="details-section-title">Data Architecture & DAX</h2>
+          <h2 className="details-section-title">Data Architecture &amp; DAX</h2>
         </div>
         <ul className="timeline-desc" style={{ paddingLeft: '20px', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.8' }}>
           <li style={{ marginBottom: '8px' }}><strong>Data Transformation:</strong> Cleaned and modeled employee data using Power Query, structuring it into a star schema containing fact and dimension tables for streamlined workforce analysis.</li>
@@ -866,7 +864,7 @@ Avg Satisfaction = AVERAGE(Fact_Hospital_Activity[Satisfaction])`}
       <div className="details-section">
         <div className="details-title-row">
           <div className="details-line"></div>
-          <h2 className="details-section-title">Key Insights & Findings</h2>
+          <h2 className="details-section-title">Key Insights &amp; Findings</h2>
         </div>
         <ul className="timeline-desc" style={{ paddingLeft: '20px', margin: 0, color: 'var(--text-secondary)', lineHeight: '1.8' }}>
           <li><strong>Retention Risk Identification:</strong> Data analysis revealed that employees working overtime had nearly double the attrition rate compared to those with standard hours, highlighting overtime as a critical retention risk factor for HR management.</li>
@@ -878,7 +876,6 @@ Avg Satisfaction = AVERAGE(Fact_Hospital_Activity[Satisfaction])`}
   return (
     <>
       <div className="container">
-        
         <nav className="navbar">
           <div className="nav-links">
             <a href="#home" className="nav-link" onClick={() => setActivePage('home')}>Home</a>
@@ -898,7 +895,6 @@ Avg Satisfaction = AVERAGE(Fact_Hospital_Activity[Satisfaction])`}
          activePage === 'hospital' ? renderHospitalDetails() : 
          activePage === 'hr' ? renderHRDetails() : 
          renderLahjDetails()}
-        
       </div>
       
       <footer className="footer" id="contact">
