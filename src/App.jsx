@@ -204,7 +204,7 @@ function App() {
         </div>
         
         <p className="bio" style={{ maxWidth: '650px', margin: '0 auto 24px', color: 'var(--text-secondary)', lineHeight: '1.8', fontSize: '1.05rem', textAlign: 'center', textWrap: 'balance' }}>
-          With a strong foundation in Computer Science, expertise is applied across UI/UX design, web development, and data analytics. The focus lies in transforming complex data into actionable insights, while designing and engineering user-centric digital solutions. By bridging the gap between analytical metrics and human-computer interaction, products are developed to be both highly functional and visually compelling.
+          Computer Science graduate passionate about turning data and user needs into practical digital solutions. I work across data analytics, systems analysis, UI/UX design, and web development, with a focus on building products that are functional, intuitive, and insight-driven.
         </p>
       </div>
 
