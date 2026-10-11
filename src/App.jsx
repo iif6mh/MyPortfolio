@@ -119,7 +119,7 @@ function App() {
             UI/UX Designer & Software Developer | Data Analytics & BI Enthusiast
           </div>
           <p className="bio">
-            A fresh Computer Science graduate specializing in the intersection of UI/UX design, software development, and data analytics. Dedicated to building intuitive digital products and leveraging business intelligence to drive data-informed user experiences and operational efficiency.
+            Fresh Computer Science graduate combining data analytics, systems analysis, UI/UX design, and software development. I turn business and user requirements into intuitive, data-driven solutions that improve efficiency.
           </p>
         </section>
 
@@ -215,22 +215,27 @@ function App() {
         </div>
         <div className="skills-grid">
           {[
-            { name: 'HTML', icon: 'devicon-html5-plain' },
-            { name: 'JS', icon: 'devicon-javascript-plain' },
-            { name: 'CSS', icon: 'devicon-css3-plain' },
-            { name: 'PHP', icon: 'devicon-php-plain' },
-            { name: 'React', icon: 'devicon-react-original' },
-            { name: 'Figma', icon: 'devicon-figma-plain' },
-            { name: 'C++', icon: 'devicon-cplusplus-plain' },
-            { name: 'Java', icon: 'devicon-java-plain' },
-            { name: 'Python', icon: 'devicon-python-plain' },
-            { name: 'Github', icon: 'devicon-github-original' },
-            { name: 'Flutter', icon: 'devicon-flutter-plain' },
-            { name: 'SQL & MySQL', icon: 'devicon-mysql-plain' },
-            { name: 'AI & Deep Learning', icon: 'devicon-tensorflow-original' },
-            { name: 'Firebase', icon: 'devicon-firebase-plain' },
-            { name: 'Power BI', icon: 'devicon-microsoft-original' },
-            { name: 'MS Office', icon: 'devicon-windows8-original' }
+         { name: 'Requirements Analysis', icon: 'fa-solid fa-clipboard-list' },
+    { name: 'UML & BPMN', icon: 'fa-solid fa-diagram-project' },
+    { name: 'Agile / Scrum', icon: 'fa-solid fa-arrows-spin' },
+    { name: 'SQL & MySQL', icon: 'devicon-mysql-plain' },
+    { name: 'Power BI & DAX', icon: 'devicon-microsoft-original' },
+    { name: 'Excel', icon: 'fa-solid fa-file-excel' },
+    { name: 'Data Modeling', icon: 'fa-solid fa-database' },
+    { name: 'Python (Pandas)', icon: 'devicon-pandas-original' },
+    { name: 'AI & Deep Learning', icon: 'devicon-tensorflow-original' },
+    { name: 'Figma', icon: 'devicon-figma-plain' },
+    { name: 'HTML', icon: 'devicon-html5-plain' },
+    { name: 'CSS', icon: 'devicon-css3-plain' },
+    { name: 'JS', icon: 'devicon-javascript-plain' },
+    { name: 'React', icon: 'devicon-react-original' },
+    { name: 'Flutter', icon: 'devicon-flutter-plain' },
+    { name: 'Firebase', icon: 'devicon-firebase-plain' },
+    { name: 'Java', icon: 'devicon-java-plain' },
+    { name: 'C++', icon: 'devicon-cplusplus-plain' },
+    { name: 'PHP', icon: 'devicon-php-plain' },
+    { name: 'Github', icon: 'devicon-github-original' },
+    { name: 'MS Office', icon: 'devicon-windows8-original' }
           ].map((skill, index) => (
             <div key={index} className="skill-tag">
               <i className={skill.icon} style={{ fontSize: '1.2rem' }}></i> {skill.name}
